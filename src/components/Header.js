@@ -11,7 +11,7 @@ const Header = () => {
       </div>
       <nav>
         <ul>
-          <li><a href="#features">Features</a></li>
+          <li><a href="#features">Fonctionnalités</a></li>
           <li><a href="#about">A propos</a></li>
         </ul>
         <a href="deployed_project_url" className={styles.button}>Voir le projet</a>
