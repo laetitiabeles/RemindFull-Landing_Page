@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import TimelineObserver from "react-timeline-animation";
 import { fireConfetti } from "./confetti";
-import aboutPicture from '../assets/about.jpg';
 import styles from '../styles/About.module.css';
+import about from '../assets/about.jpg';
 
 const Timeline = ({ setObserver, callback }) => {
   const [message1, setMessage1] = useState("");
@@ -13,8 +13,6 @@ const Timeline = ({ setObserver, callback }) => {
   const [description2, setDescription2] = useState("");
   const [description3, setDescription3] = useState("");
   const [description4, setDescription4] = useState("");
-
-
 
   const timeline1 = useRef(null);
   const timeline2 = useRef(null);
@@ -105,6 +103,7 @@ const About = () => {
     <section id="about" className={styles.about}>
       <div className={styles.story}>
         <div className={styles.storyText}>
+          <img src={about} alt="About" className={styles.aboutImage}/>
           <h2 className={styles.title}>A propos de RemindFull</h2>
           <p>
             RemindFull a été un projet inspiré par toutes les personnes neurodivergentes de mon entourage. J'ai pu constater que la gestion des tâches quotidiennes et des interactions sociales peut être difficile pour certaines personnes. Il était nécessaire de créer une application simple qui permet de gérer les tâches quotidiennes et de planifier des rappels pour garder le lien.
@@ -120,19 +119,19 @@ const About = () => {
             <a href="https://github.com/laetitiabeles/RemindFull_Mobile_Web" className={styles.button}>Voir sur GitHub</a>
           </div>
         </div>
-        <img src={aboutPicture} alt="About" className={styles.aboutImage} />
-      </div>
-      <h2 className={styles.title}>Roadmap</h2>
-      <TimelineObserver
-        initialColor="#e5e5e5"
-        fillColor="#031D44"
-        handleObserve={(setObserver) => (
-          <Timeline
-            callback={onCallback}
-            setObserver={setObserver}
+        <div className={styles.roadmapStart}>
+          <TimelineObserver
+            initialColor="#e5e5e5"
+            fillColor="#031D44"
+            handleObserve={(setObserver) => (
+              <Timeline
+                callback={onCallback}
+                setObserver={setObserver}
+              />
+            )}
           />
-        )}
-      />
+        </div>
+      </div>
     </section>
   );
 };

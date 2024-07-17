@@ -13,6 +13,7 @@ const Header = () => {
         <ul>
           <li><a href="#features">Fonctionnalités</a></li>
           <li><a href="#about">A propos</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
         <a href="deployed_project_url" className={styles.button}>Voir le projet</a>
       </nav>
