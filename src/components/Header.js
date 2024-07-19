@@ -15,7 +15,7 @@ const Header = () => {
           <li><a href="#about">A propos</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="deployed_project_url" className={styles.button}>Voir le projet</a>
+        <a href="https://github.com/laetitiabeles/remindfull-landing_page" className={styles.button}>Voir le projet</a>
       </nav>
     </header>
   );
