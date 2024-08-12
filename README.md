@@ -5,7 +5,7 @@
     <h1 align="center">REMINDFULL LANDING PAGE</h1>
 </p>
 <p align="center">
-    <em>TThe website that presents the RemindFull project</em>
+    <em>The website that presents the RemindFull project</em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/laetitiabeles/RemindFull_Mobile_Web?style=flat&color=0080ff" alt="license">
