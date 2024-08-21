@@ -1,63 +1,108 @@
 .cover {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    margin-bottom: 0px;
-  }
-  
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textContainer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  color: #031D44;
+}
+
+.textElement {
+  transition: opacity 0.3s ease;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 20px;
+  color: #031D44;
+  width: 100%;
+}
+
+.textRow {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.leftText, .rightText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 40px;
+  color: #031D44;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Media Query pour les petits écrans (max-width: 1300px) */
+@media (max-width: 1300px) {
+
   .coverImage {
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  .textContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0px;
-    color: white;
-  }
-  
-  .textElement {
-    transition: opacity 0.3s ease;
-  }
-  
-  .title {
-    font-family: 'Inter', sans-serif;
-    font-weight: 200;
-    font-size: 60px;
-    text-align: center;
-    margin-top: 20px;
-    color: #031D44;
+      object-fit: cover;
+      margin: 0 auto;
   }
 
-  .textRow {
-    display: flex;
-    justify-content: space-between;
+  .title {
+      font-size: 36px;
+      margin-top: 10px;
+  }
+
+  .leftText, .rightText {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 30px;
+  }
+
+  .leftText p, .rightText p {
     width: 100%;
-    margin-bottom: 300px;
+    text-align: center;
   }
-  
-  .leftText {
-    margin-left: 30px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 200;
-    font-size: 40px;
-    color: #031D44;
+}
+
+/* Media Query pour les très petits écrans (max-width: 480px) */
+@media (max-width: 480px) {
+
+  .cover {
+    height: auto;
+    margin-bottom: 20px;
   }
-  
-  .rightText {
-    margin-right: 30px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 200;
-    font-size: 40px;
-    color: #031D44;
-    text-align: right;
+
+  .coverImage {
+    height: 40vh;
+    object-fit: cover;
   }
-  
+
+  .title {
+      font-size: 28px;
+      margin-top: 10px;
+  }
+
+  .leftText, .rightText {
+      font-size: 28px;
+      margin-bottom: 30px;
+  }
+
+}

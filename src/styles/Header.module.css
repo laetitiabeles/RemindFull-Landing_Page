@@ -1,53 +1,232 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: white;
-  }
-  
-  .logoContainer {
-    display: flex;
-    align-items: center;
-    font-family: 'Inter', sans-serif;
-    color: #031D44;
-    font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: white;
+  position: relative; /* Assure que les éléments enfants sont positionnés relativement à ce conteneur */
+}
 
+.logoContainer {
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  color: #031D44;
+  font-size: 10px;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  margin-right: 15px;
+}
+
+.menuToggle {
+  display: none; /* Masqué par défaut */
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+}
+
+.header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+}
+
+.header nav a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #031D44;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.header .button {
+  padding: 10px 20px;
+  background-color: #031D44;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  margin-left: 50px;
+}
+
+/* Media Query pour les très petits écrans (max-width: 550px) */
+@media (max-width: 550px) {
+  .header {
+    padding: 10px;
   }
-  
-  .logo {
-    width: 90px;
-    height: 90px;
-    margin-right: 15px;
+
+  .logoContainer {
+    flex-grow: 1;
+  }
+
+  .menuToggle {
+    display: block; /* Affiche le bouton pour les petits écrans */
+    font-size: 24px;
+    color: #031D44;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: auto; /* Le pousse à droite */
+    position: relative;
+    z-index: 1001; /* Assure que le bouton reste au-dessus du menu déroulant */
   }
 
   .header nav {
-    display: flex;
-    align-items: center;
+    display: none;
+    position: absolute;
+    top: 100%; /* Positionne le menu juste en dessous du header */
+    right: 10px; /* Positionne le menu à droite */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Ajuste la largeur du menu pour les très petits écrans */
+    max-width: 250px; /* Limite la largeur maximale du menu */
+    z-index: 1000; /* Place le menu sous le bouton d'accordéon */
   }
-  
+
+  .header nav.open {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
   .header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    margin: 0;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    text-align: center;
   }
-  
+
   .header nav a {
-    font-family: 'inter', sans-serif;
-    font-weight: 600;
-    color: #031D44;
-    text-decoration: none;
-    margin-left: 20px;
+    margin: 10px 0;
+    text-align: left;
   }
-  
+
   .header .button {
-    padding: 10px 20px;
-    background-color: #031D44;
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
-    margin-left: 50px;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
   }
-  
+}
+
+/* Media Query pour les petits écrans (max-width: 768px) */
+@media (max-width: 780px) {
+  .header {
+    padding: 10px 20px;
+  }
+
+  .logoContainer {
+    flex-grow: 1;
+  }
+
+  .menuToggle {
+    display: block; /* Affiche le bouton pour les petits écrans */
+    font-size: 24px;
+    color: #031D44;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: auto; /* Le pousse à droite */
+    position: relative;
+    z-index: 1001; /* Assure que le bouton reste au-dessus du menu déroulant */
+  }
+
+  .header nav {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positionne le menu juste en dessous du header */
+    right: 10px; /* Positionne le menu à droite */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Réduit la largeur du menu */
+    z-index: 1000; /* Place le menu sous le bouton d'accordéon */
+  }
+
+  .header nav.open {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .header nav a {
+    margin: 10px 0;
+    text-align: left;
+  }
+
+  .header .button {
+    width: 70%;
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+
+/* Media Query pour les très petits écrans (max-width: 390px) */
+@media (max-width: 430px) {
+  .header {
+    padding: 10px;
+  }
+
+  .menuToggle {
+    font-size: 24px;
+    padding: 8px;
+    margin-left: auto;
+  }
+
+  .header nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Augmente la largeur du menu à 90% */
+    max-width: none; /* Supprime la largeur maximale pour que le menu s'étende davantage */
+    z-index: 1000;
+  }
+
+  .header nav.open {
+    display: flex;
+    flex-direction: column;
+    padding: 5px; /* Réduit le padding à l'intérieur du menu */
+  }
+
+  .header nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .header nav a {
+    margin: 5px 0; /* Réduit les marges pour les liens */
+    padding: 10px; /* Ajoute du padding autour des liens pour éviter le dépassement */
+    font-size: 14px; /* Réduit la taille de la police pour éviter le dépassement */
+  }
+
+  .header .button {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0; /* Réduit les marges pour le bouton */
+    font-size: 14px; /* Réduit la taille de la police du bouton */
+  }
+}

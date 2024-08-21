@@ -58,7 +58,7 @@ const Timeline = ({ setObserver, callback }) => {
 
   return (
     <div className={styles.wrapper}>
-      <div id="timeline1" ref={timeline1} className={styles.timeline} />
+      <div id="timeline1" ref={timeline1} className={`${styles.timeline}`} />
       <div className={styles.circleWrapper}>
         <div id="circle1" ref={circle1} className={styles.circle}>
           1
@@ -123,6 +123,8 @@ const About = () => {
           <TimelineObserver
             initialColor="#e5e5e5"
             fillColor="#031D44"
+            threshold={0.1}
+            rootMargin="0px 0px -200px 0px"
             handleObserve={(setObserver) => (
               <Timeline
                 callback={onCallback}

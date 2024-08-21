@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/Header.module.css';
 import logo from '../assets/logo1.png';
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>
-        <img className={styles.logo} src={logo} alt="Logo"/>
+        <img className={styles.logo} src={logo} alt="Logo" />
         <h1 className={styles.title}>RemindFull</h1>
       </div>
-      <nav>
+      <button className={styles.menuToggle} onClick={toggleMenu}>
+        ☰
+      </button>
+      <nav className={`${menuOpen ? styles.open : ''}`}>
         <ul>
           <li><a href="#features">Fonctionnalités</a></li>
           <li><a href="#about">A propos</a></li>
@@ -19,6 +28,6 @@ const Header = () => {
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

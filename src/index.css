@@ -5,9 +5,101 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Conteneur global */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Styles de base pour les sections */
+section {
+  padding: 60px 15px;
+  text-align: center;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start; /* Scroll snap */
+}
+
+/* Typographie de base */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.2;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Images et médias pour responsivité */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Listes */
+ul, ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Liens */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Flexbox pour aligner les éléments */
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Grille pour organiser les éléments */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Media Queries pour ajustements responsifs */
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  section {
+    padding: 80px 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  section {
+    padding: 100px 60px;
+  }
 }

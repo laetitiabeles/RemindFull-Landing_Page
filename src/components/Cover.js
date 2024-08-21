@@ -6,14 +6,19 @@ const Cover = () => {
   useEffect(() => {
     const handleScroll = () => {
       const textElements = document.querySelectorAll(`.${styles.textElement}`);
+      const coverSection = document.querySelector(`.${styles.cover}`);
+      const sectionTop = coverSection.offsetTop;
+      const sectionHeight = coverSection.offsetHeight;
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
 
-      textElements.forEach((el, index) => {
-        const offset = index * 50;
-        if (scrollTop > offset) {
-          el.style.opacity = 1 - (scrollTop - offset) / 300;
+      textElements.forEach((el) => {
+        // Condition pour gérer l'opacité en fonction du scroll
+        if (scrollTop > sectionTop + sectionHeight || scrollTop + windowHeight < sectionTop) {
+          el.style.opacity = 0; // Cache le texte lorsque l'utilisateur quitte la section
         } else {
-          el.style.opacity = 1;
+          const distanceFromTop = Math.max(0, scrollTop + windowHeight - sectionTop);
+          el.style.opacity = 1 - (distanceFromTop / (sectionHeight + windowHeight));
         }
       });
     };
@@ -29,10 +34,9 @@ const Cover = () => {
     <section className={styles.cover}>
       <img src={coverImage} alt="Cover" className={styles.coverImage} />
       <div className={styles.textContainer}>
-        <h1 className={`${styles.textElement} ${styles.title}`}></h1>
         <div className={styles.textRow}>
-          <p className={`${styles.textElement} ${styles.leftText}`}>N'oubliez plus<br></br>de contacter<br></br>vos amis et<br></br>votre famille</p>
-          <p className={`${styles.textElement} ${styles.rightText}`}>Rendez vos<br></br> tâches et vos<br></br>journées plus<br></br> simples</p>
+          <p className={`${styles.textElement} ${styles.leftText}`}>N'oubliez plus de contacter vos amis et votre famille</p>
+          <p className={`${styles.textElement} ${styles.rightText}`}>Rendez vos tâches et vos journées plus simples</p>
         </div>
       </div>
     </section>
