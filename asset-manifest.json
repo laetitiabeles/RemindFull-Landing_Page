@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/remindfull-landing_page/static/css/main.41812ac4.css",
-    "main.js": "/remindfull-landing_page/static/js/main.091864f8.js",
+    "main.css": "/remindfull-landing_page/static/css/main.7a86369b.css",
+    "main.js": "/remindfull-landing_page/static/js/main.6136e8b2.js",
     "static/js/453.3d721deb.chunk.js": "/remindfull-landing_page/static/js/453.3d721deb.chunk.js",
     "static/media/about.jpg": "/remindfull-landing_page/static/media/about.3e2dda685901c45d1559.jpg",
     "static/media/cover-image.jpg": "/remindfull-landing_page/static/media/cover-image.027d756b11567072c997.jpg",
@@ -11,12 +11,12 @@
     "static/media/logo1.png": "/remindfull-landing_page/static/media/logo1.0d4073787710f925c73f.png",
     "static/media/contact.jpeg": "/remindfull-landing_page/static/media/contact.aa32a853185ebaa34b5b.jpeg",
     "index.html": "/remindfull-landing_page/index.html",
-    "main.41812ac4.css.map": "/remindfull-landing_page/static/css/main.41812ac4.css.map",
-    "main.091864f8.js.map": "/remindfull-landing_page/static/js/main.091864f8.js.map",
+    "main.7a86369b.css.map": "/remindfull-landing_page/static/css/main.7a86369b.css.map",
+    "main.6136e8b2.js.map": "/remindfull-landing_page/static/js/main.6136e8b2.js.map",
     "453.3d721deb.chunk.js.map": "/remindfull-landing_page/static/js/453.3d721deb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.41812ac4.css",
-    "static/js/main.091864f8.js"
+    "static/css/main.7a86369b.css",
+    "static/js/main.6136e8b2.js"
   ]
 }
